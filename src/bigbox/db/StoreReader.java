@@ -6,7 +6,7 @@ import bigbox.business.Store;
 
 public interface StoreReader {
 
-	Store getStoreByDivisionAndStoreNumber(String inDiv, String inStoreNbr);
+	Store getStoreByDivisionAndStoreNumber(String inDivNbr, String inStoreNbr);
 	ArrayList<Store> getAllStores();
-	ArrayList<Store> getAllStoresByDivision(String inDiv);
+	ArrayList<Store> getAllStoresByDivision(String inDivNbr);
 }
