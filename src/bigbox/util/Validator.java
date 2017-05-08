@@ -189,8 +189,14 @@ public class Validator
 			case "div":
 			case "add":
 			case "del":
+			case "sales":
 			case "help":
 			case "exit":
+			case "store":
+			case "year":
+			case "back":
+			case "week":
+			case "allsales":
 				// The command is valid
 				isValid = true;
 				break;
