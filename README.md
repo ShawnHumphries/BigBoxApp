@@ -10,4 +10,8 @@ Asks the user for a division and store number, then displays information for tha
 
 Version 2.0
 ===========
-Introduces the Factory pattern, including StoreDAO, StoreReader and StoreWriter interfaces to use a StoreArray class to retrieve Store information from an ArrayList of Stores.
+Introduces the Factory pattern, including StoreDAO, StoreReader and StoreWriter interfaces to use a StoreArray class to retrieve and update Store information from an ArrayList of Stores.
+
+Version 2.1
+===========
+Updates the application to read the Store information from a text file (stores.txt) using BufferedReader classes and updates the information entered by the user utilizing the BufferedWriter classes.
