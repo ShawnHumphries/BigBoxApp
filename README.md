@@ -15,3 +15,7 @@ Introduces the Factory pattern, including StoreDAO, StoreReader and StoreWriter 
 Version 2.1
 ===========
 Updates the application to read the Store information from a text file (stores.txt) using BufferedReader classes and updates the information entered by the user utilizing the BufferedWriter classes.
+
+Version 3.0
+===========
+Builds on previous versions to retrieve store information from a MySQL database called stores and provides various functions to update store information inside the database.
