@@ -1,28 +1,42 @@
 package bigbox.business;
 
-import java.text.NumberFormat;
+import java.util.ArrayList;
 
 public class Store extends Facility {
 
+	private int divisionID;
 	private String storeNbr;
-	private String divisionNbr;
-	private double sales;
+	private ArrayList<StoreSales> sales;
 	
 	// default constructor
 	public Store()
 	{
 		super();
+		divisionID = 0;
 		storeNbr = "";
-		divisionNbr = "";
-		sales = 0.0;
+		sales = new ArrayList<StoreSales>();
 	}
 	
-	public Store(int inId, String inDivisionNbr, String inStoreNbr, double inSales, String inName, String inAddress, String inCity, String inState, String inZip)
+	public Store(int idIn, int divisionIDIn, String storeNbrIn, String nameIn, String addressIn, String cityIn, String stateIn, String zipIn)
 	{
-		super(inId, inName, inAddress, inCity, inState, inZip);
-		storeNbr = inStoreNbr;
-		divisionNbr = inDivisionNbr;
-		sales = inSales;
+		super(idIn, nameIn, addressIn, cityIn, stateIn, zipIn);
+		divisionID = divisionIDIn;
+		storeNbr = storeNbrIn;
+	}
+
+	public Store(int divisionIDIn, String storeNbrIn, String nameIn, String addressIn, String cityIn, String stateIn, String zipIn) 
+	{
+		super(-1, nameIn, addressIn, cityIn, stateIn, zipIn);
+		divisionID = divisionIDIn;
+		storeNbr = storeNbrIn;
+	}
+
+	public int getDivisionID() {
+		return divisionID;
+	}
+
+	public void setDivisionID(int divisionID) {
+		this.divisionID = divisionID;
 	}
 
 	public String getStoreNbr() {
@@ -33,30 +47,17 @@ public class Store extends Facility {
 		this.storeNbr = storeNbr;
 	}
 
-	public String getDivisionNbr() {
-		return divisionNbr;
-	}
-
-	public void setDivisionNbr(String divisionNbr) {
-		this.divisionNbr = divisionNbr;
-	}
-
-	public double getSales() {
+	public ArrayList<StoreSales> getSales() {
 		return sales;
 	}
 
-	public void setSales(double sales) {
+	public void setSales(ArrayList<StoreSales> sales) {
 		this.sales = sales;
 	}
-	
+
 	public String toString()
 	{
-		return "[Store: store#=" + getStoreNbr() + ", div#=" + getDivisionNbr() + ", sales=" + getFormattedSales() + "]\n" + super.toString();
+		return "[Store: store#=" + getStoreNbr() + "]\n" + super.toString();
 	}
 	
-	public String getFormattedSales()
-	{
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
-        return currency.format(getSales());
-	}
 }
