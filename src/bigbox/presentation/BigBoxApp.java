@@ -118,9 +118,12 @@ public class BigBoxApp {
 		String divisionNbr = Validator.getString(sc, "Enter the division: ", StoreDAO.DIV_LENGTH);
 		String storeNbr = Validator.getString(sc, "Enter the store number: ", StoreDAO.STORE_LENGTH);
 		Store store = storeDAO.getStoreByDivisionAndStoreNumber(divisionNbr, storeNbr);
-		// Delete this store
-		if (storeDAO.deleteStore(store))
-			System.out.println("Store number " + storeNbr + " has been deleted successfully.\n");
+		if (store != null)
+			// Delete this store
+			if (storeDAO.deleteStore(store))
+				System.out.println("Store number " + storeNbr + " has been deleted successfully.\n");
+			else
+				System.out.println("Store number " + storeNbr + " was not deleted successfully.\n");
 		else
 			System.out.println("Store number " + storeNbr + " was not deleted successfully.\n");
 	}
