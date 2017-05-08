@@ -1,6 +1,7 @@
 package bigbox.util;
 
 import java.sql.*;
+import java.text.NumberFormat;
 
 public class DBUtil {
 
@@ -18,8 +19,8 @@ public class DBUtil {
             try 
             {
                 // set the db url, username, and password
-                String url = "jdbc:mysql://localhost:3306/bigboxdb";
-                String username = "bigboxdb_user";
+                String url = "jdbc:mysql://localhost:3306/bigbox2db";
+                String username = "bb_user";
                 String password = "sesame";
 
                 // get and return the connection
@@ -70,4 +71,5 @@ public class DBUtil {
     	}
     	return sb.toString();
     }
+    
 }
