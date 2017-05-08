@@ -19,3 +19,7 @@ Updates the application to read the Store information from a text file (stores.t
 Version 3.0
 ===========
 Builds on previous versions to retrieve store information from a MySQL database called stores and provides various functions to update store information inside the database.
+
+Version 3.1
+===========
+Significant schema updates to the BigBox2DB database introduces new tables and through SQL joins adds new functionality to get store sales via different methods.  Also cleans up how information is displayed to the user.
