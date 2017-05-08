@@ -1,5 +1,7 @@
 package bigbox.business;
 
+import java.text.NumberFormat;
+
 public class Store extends Facility {
 
 	private String storeNbr;
@@ -49,6 +51,12 @@ public class Store extends Facility {
 	
 	public String toString()
 	{
-		return "[Store: store#=" + getStoreNbr() + ", div#=" + getDivisionNbr() + ", sales=" + getSales() + "]\n" + super.toString();
+		return "[Store: store#=" + getStoreNbr() + ", div#=" + getDivisionNbr() + ", sales=" + getFormattedSales() + "]\n" + super.toString();
+	}
+	
+	public String getFormattedSales()
+	{
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        return currency.format(getSales());
 	}
 }
