@@ -4,7 +4,7 @@ public class DAOFactory {
 
 	public static StoreDAO getStoreDAO()
 	{
-		StoreDAO sDAO = new StoreArray();
+		StoreDAO sDAO = new StoreTextFile();
 		return sDAO;
 	}
 }
